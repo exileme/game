@@ -92,7 +92,9 @@ function CnEra(e) {
     return t[e % 10] + r[e % 12]
 }
 function CnDateofDateStr(e) {
-    return "零月" == CnMonthofDate(e) ? "　请调整您的计算机日期!" : "农历" + CnMonthofDate(e) + CnDayofDate(e)
+    // 注释获取2020前农历的计算方式，改用新追加的riliAppend.js的计算
+    // return "零月" == CnMonthofDate(e) ? "　请调整您的计算机日期!" : "农历" + CnMonthofDate(e) + CnDayofDate(e)
+    return "零月" == getLunar(e) ? "　请调整您的计算机日期!" : "农历：" + getLunar(e)
 }
 function SolarTerm(e) {
     var t = new Array("","","","","","","","","","","","","","","","","","","","","","","","")
